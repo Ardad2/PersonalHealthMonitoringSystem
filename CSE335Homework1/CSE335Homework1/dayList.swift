@@ -9,11 +9,15 @@ import Foundation
 
 class dayList: ObservableObject
 {
-    @Published var queue:[dayRecord] = [dayRecord]();
+    @Published var list:[dayRecord] = [dayRecord]();
     
     init() {
         
     }
     
+    func add_day()
+    {
+        
+    }
     
 }
