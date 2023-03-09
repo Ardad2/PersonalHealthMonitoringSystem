@@ -12,22 +12,25 @@ class dayRecord
     var date:Date? = nil;
     var bloodPressureSystolic:Double? = nil;
     var bloodPressureDiastolic:Double? = nil;
+    var weight:Double? = nil;
     var sugarLevel:Double? = nil;
     var symptoms:String? = nil;
     
-    init (bloodPressureSystolic:Double, bloodPressureDiastolic:Double, sugarLevel:Double, symptoms:String)
+    init (bloodPressureSystolic:Double, bloodPressureDiastolic:Double, weight:Double, sugarLevel:Double, symptoms:String)
     {
         self.date = Date.now;
         self.bloodPressureSystolic = bloodPressureSystolic;
         self.bloodPressureDiastolic = bloodPressureSystolic;
+        self.weight = weight;
         self.sugarLevel = sugarLevel;
         self.symptoms = symptoms;
     }
     
-    func change_record(newBPSystolic:Double, newBPDiastolic:Double, newSugar:Double, newSymptoms:String)
+    func change_record(newBPSystolic:Double, newBPDiastolic:Double,newWeight: Double, newSugar:Double, newSymptoms:String)
     {
         self.bloodPressureSystolic = newBPSystolic;
         self.bloodPressureDiastolic = newBPDiastolic;
+        self.weight = newWeight;
         self.sugarLevel = newSugar;
         self.symptoms = newSymptoms;
     }
@@ -45,6 +48,12 @@ class dayRecord
     {
         return self.bloodPressureDiastolic!;
     }
+    
+    func get_weight() -> Double
+    {
+        return self.weight!;
+    }
+    
     
     func get_sugarLevel() -> Double
     {

@@ -7,13 +7,15 @@
 
 import Foundation
 
-class dayList: ObservableObject
+class dayDictionary: ObservableObject
 {
     @Published var list:[dayRecord] = [dayRecord]();
     
     init() {
         
     }
+    
+    //ADD
     
     func add_day(_ givenDate:Date, _ bloodPressureSystolic:Double, _ bloodPressureDiastolic:Double, _ sugarLevel:Double, _ symptoms:String)
     {
@@ -43,6 +45,45 @@ class dayList: ObservableObject
         else {
             list.append(dayRecord(bloodPressureSystolic:bloodPressureSystolic, bloodPressureDiastolic:bloodPressureDiastolic, sugarLevel:sugarLevel, symptoms:symptoms))
         }
+    }
+    
+    //RETURN COUNT
+    
+    func get_List() -> [dayRecord]
+    {
+        return list;
+    }
+    
+    //Health Check 1/3: Check if gaining weight
+    
+    func gainedWeight() -> Bool
+    {
+        if (list.count < 7)
+        {
+            return false;
+        }
+        
+    var lastFourDaysWeightSum: Double = 0.0;
+        
+        for index in 0..<4
+        {
+            lastFourDaysWeightSum += list[index].get_
+        }
+        
+        
+        
+    }
+    
+    //Health Check 2/3: Check if sugar level higher
+    
+    func sugarHigh() -> Bool {
+        
+    }
+    
+    //Health Check 3/3: Check if Blood Pressure is higher
+    
+    func bpHigh() -> Bool {
+        
     }
     
     
