@@ -95,6 +95,23 @@ class dayDictionary: ObservableObject
     //Health Check 2/3: Check if sugar level higher
     
     func sugarHigh() -> Bool {
+        if (list.count < 2)
+        {
+            return false;
+        }
+        
+        var dangerSugar:Double = (list[1].get_sugarLevel()) * (1.10);
+        
+        var todaySugar:Double = list[0].get_sugarLevel();
+        
+        if (todaySugar >= dangerSugar)
+        {
+            return true;
+        }
+        else {
+            return false;
+        }
+        
         
     }
     
