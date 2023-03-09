@@ -15,6 +15,7 @@
 		82EC5E2E29B984A000B96D33 /* CSE335Homework1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EC5E2D29B984A000B96D33 /* CSE335Homework1UITests.swift */; };
 		82EC5E3029B984A000B96D33 /* CSE335Homework1UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EC5E2F29B984A000B96D33 /* CSE335Homework1UITestsLaunchTests.swift */; };
 		82EC5E3D29B9859D00B96D33 /* dayRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EC5E3C29B9859D00B96D33 /* dayRecord.swift */; };
+		82EC5E3F29BA7F2D00B96D33 /* dayList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EC5E3E29BA7F2D00B96D33 /* dayList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		82EC5E2D29B984A000B96D33 /* CSE335Homework1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSE335Homework1UITests.swift; sourceTree = "<group>"; };
 		82EC5E2F29B984A000B96D33 /* CSE335Homework1UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSE335Homework1UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		82EC5E3C29B9859D00B96D33 /* dayRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dayRecord.swift; sourceTree = "<group>"; };
+		82EC5E3E29BA7F2D00B96D33 /* dayList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dayList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 		82EC5E1129B9849F00B96D33 /* CSE335Homework1 */ = {
 			isa = PBXGroup;
 			children = (
+				82EC5E3E29BA7F2D00B96D33 /* dayList.swift */,
 				82EC5E3C29B9859D00B96D33 /* dayRecord.swift */,
 				82EC5E1229B9849F00B96D33 /* CSE335Homework1App.swift */,
 				82EC5E1429B9849F00B96D33 /* ContentView.swift */,
@@ -262,6 +265,7 @@
 			files = (
 				82EC5E3D29B9859D00B96D33 /* dayRecord.swift in Sources */,
 				82EC5E1529B9849F00B96D33 /* ContentView.swift in Sources */,
+				82EC5E3F29BA7F2D00B96D33 /* dayList.swift in Sources */,
 				82EC5E1329B9849F00B96D33 /* CSE335Homework1App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
