@@ -23,6 +23,38 @@ class dayRecord
         self.sugarLevel = sugarLevel;
         self.symptoms = symptoms;
     }
+    
+    func change_record(newBPSystolic:Double, newBPDiastolic:Double, newSugar:Double, newSymptoms:String)
+    {
+        self.bloodPressureSystolic = newBPSystolic;
+        self.bloodPressureDiastolic = newBPDiastolic;
+        self.sugarLevel = newSugar;
+        self.symptoms = newSymptoms;
+    }
+    
+    func get_date() -> Date {
+        return self.date!;
+    }
+    
+    func get_bloodPressureSystolic() -> Double
+    {
+        return self.bloodPressureSystolic!;
+    }
+    
+    func get_bloodPressureDiastolic() -> Double
+    {
+        return self.bloodPressureDiastolic!;
+    }
+    
+    func get_sugarLevel() -> Double
+    {
+        return self.sugarLevel!;
+    }
+    
+    func get_symptoms() -> String
+    {
+        return self.symptoms!;
+    }
 }
 
 
