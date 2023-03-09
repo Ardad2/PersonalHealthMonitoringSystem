@@ -17,20 +17,20 @@ class dayDictionary: ObservableObject
     
     //ADD
     
-    func add_day(_ givenDate:Date, _ bloodPressureSystolic:Double, _ bloodPressureDiastolic:Double, _ sugarLevel:Double, _ symptoms:String)
+    func add_day(_ givenDate:Date, _ bloodPressureSystolic:Double, _ bloodPressureDiastolic:Double, _ weight:Double,  _ sugarLevel:Double, _ symptoms:String)
     {
         if (list.count >= 1)
         {
             if (list[0].get_date() == Date.now)
             {
-                list[0].change_record(newBPSystolic:bloodPressureSystolic, newBPDiastolic:bloodPressureDiastolic, newSugar:sugarLevel, newSymptoms:symptoms)
+                list[0].change_record(newBPSystolic:bloodPressureSystolic, newBPDiastolic:bloodPressureDiastolic, newWeight: weight, newSugar:sugarLevel, newSymptoms:symptoms)
 
                 
                 
             }
             else
             {
-                list.insert(dayRecord(bloodPressureSystolic:bloodPressureSystolic, bloodPressureDiastolic:bloodPressureDiastolic, sugarLevel:sugarLevel, symptoms:symptoms), at: 0)
+                list.insert(dayRecord(bloodPressureSystolic:bloodPressureSystolic, bloodPressureDiastolic:bloodPressureDiastolic, weight:weight, sugarLevel:sugarLevel, symptoms:symptoms), at: 0)
                 
                 if (list.count > 7)
                 {
@@ -43,7 +43,7 @@ class dayDictionary: ObservableObject
         
         
         else {
-            list.append(dayRecord(bloodPressureSystolic:bloodPressureSystolic, bloodPressureDiastolic:bloodPressureDiastolic, sugarLevel:sugarLevel, symptoms:symptoms))
+            list.append(dayRecord(bloodPressureSystolic:bloodPressureSystolic, bloodPressureDiastolic:bloodPressureDiastolic, weight:weight, sugarLevel:sugarLevel, symptoms:symptoms))
         }
     }
     
@@ -67,9 +67,27 @@ class dayDictionary: ObservableObject
         
         for index in 0..<4
         {
-            lastFourDaysWeightSum += list[index].get_
+            lastFourDaysWeightSum += list[index].get_weight()
         }
         
+        var latestAverageWeight =  (lastFourDaysWeightSum) / (4.0);
+        
+        var earlyWeightSum: Double = 0.0;
+        
+        for index in 4..<7
+        {
+            earlyWeightSum += list[index].get_weight();
+        }
+        
+        var earlyAverageWeight = (earlyWeightSum) / (3.0);
+        
+        if (latestAverageWeight > earlyAverageWeight)
+        {
+            return true;
+        }
+        else {
+            return false;
+        }
         
         
     }
