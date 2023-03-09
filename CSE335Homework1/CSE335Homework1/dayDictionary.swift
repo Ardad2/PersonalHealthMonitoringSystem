@@ -119,6 +119,22 @@ class dayDictionary: ObservableObject
     
     func bpHigh() -> Bool {
         
+        if (list.count < 2)
+        {
+            return false;
+        }
+        
+        var dangerBPSys = (list[1].get_bloodPressureSystolic()) * (1.10) ;
+        var dangerBPDia =  (list[1].get_bloodPressureDiastolic()) * (1.10);
+        
+        var currBPSys = (list[0].get_bloodPressureSystolic());
+        var currBPDia = (list[0].get_bloodPressureDiastolic());
+        
+        if ( (currBPSys >= dangerBPSys) || (currBPDia >= dangerBPDia) || ( (currBPSys >= dangerBPSys) && (currBPDia >= dangerBPDia)  ) )
+             {
+            return true;
+        }
+             return false;
     }
     
     
