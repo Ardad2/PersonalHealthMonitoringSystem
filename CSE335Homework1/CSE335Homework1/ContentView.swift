@@ -13,24 +13,50 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView{
-            VStack {
-                HStack{
-                    Text("Personal Health Monitoring System").foregroundColor(.blue);
-                }
-                HStack{
-                    Text("Enter Data").foregroundColor(.blue);
-                }
-                HStack{
-                    Text("View My Health").foregroundColor(.blue);
-                }
-                HStack{
-                    Text("Am I at Risk?").foregroundColor(.blue);
-                }
+            VStack(spacing:100) {
+                Text("Personal Health Monitoring System")
+                
+                
+                NavigationLink(
+                    destination: ContentView(
+                        
+                    ),
+                    label: {
+                        Text("Enter Data")
+                    }).buttonStyle(.borderedProminent)
+                    .navigationTitle("ContentView")
+                    .navigationBarTitleDisplayMode(.inline)
+                    .navigationBarHidden(true)
+                
+                NavigationLink(
+                    destination: ContentView(
+                        
+                    ),
+                    label: {
+                        Text("View My Health")
+                    }).buttonStyle(.borderedProminent)
+                    .navigationTitle("ContentView")
+                    .navigationBarTitleDisplayMode(.inline)
+                    .navigationBarHidden(true)
+                
+                NavigationLink(
+                    destination: ContentView(
+                        
+                    ),
+                    label: {
+                        Text("Am I at Risk?")
+                    }).buttonStyle(.borderedProminent)
+                    .navigationTitle("ContentView")
+                    .navigationBarTitleDisplayMode(.inline)
+                    .navigationBarHidden(true)
+                
+                Spacer()
+                Spacer()
+            }
                 
             }
         }
     }
-}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
