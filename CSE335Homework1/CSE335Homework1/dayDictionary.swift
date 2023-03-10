@@ -21,7 +21,7 @@ class dayDictionary: ObservableObject
     {
         if (list.count >= 1)
         {
-            if (list[0].get_date() == Date.now)
+            if (isDateInToday(list[0].get_date()))
             {
                 list[0].change_record(newBPSystolic:bloodPressureSystolic, newBPDiastolic:bloodPressureDiastolic, newWeight: weight, newSugar:sugarLevel, newSymptoms:symptoms)
 
