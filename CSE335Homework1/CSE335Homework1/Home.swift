@@ -18,7 +18,7 @@ struct Home: View {
                 
                 
                 NavigationLink(
-                    destination: Home(
+                    destination: enterData(
                         
                     ),
                     label: {
@@ -29,7 +29,7 @@ struct Home: View {
                     .navigationBarHidden(true)
                 
                 NavigationLink(
-                    destination: Home(
+                    destination: viewMyHealth(
                         
                     ),
                     label: {
@@ -40,7 +40,7 @@ struct Home: View {
                     .navigationBarHidden(true)
                 
                 NavigationLink(
-                    destination: Home(
+                    destination: amIAtRisk(
                         
                     ),
                     label: {

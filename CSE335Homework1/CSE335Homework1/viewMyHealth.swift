@@ -1,52 +1,52 @@
 //
-//  Home.swift
-//  CSE335Homework1
+//  viewMyHealth.swift
+//  CSE335viewMyHealthwork1
 //
 //  Created by Arjun Dadhwal on 3/8/23.
 //
 
 import SwiftUI
 
-struct Home: View {
+struct viewMyHealth: View {
     
     
 
     var body: some View {
         NavigationView{
             VStack(spacing:100) {
-                Text("Personal Health Monitoring System")
+                Text("View My Health")
                 
                 
                 NavigationLink(
-                    destination: Home(
+                    destination: viewMyHealth(
                         
                     ),
                     label: {
                         Text("Enter Data")
                     }).buttonStyle(.borderedProminent)
-                    .navigationTitle("Home")
+                    .navigationTitle("viewMyHealth")
                     .navigationBarTitleDisplayMode(.inline)
                     .navigationBarHidden(true)
                 
                 NavigationLink(
-                    destination: Home(
+                    destination: viewMyHealth(
                         
                     ),
                     label: {
                         Text("View My Health")
                     }).buttonStyle(.borderedProminent)
-                    .navigationTitle("Home")
+                    .navigationTitle("viewMyHealth")
                     .navigationBarTitleDisplayMode(.inline)
                     .navigationBarHidden(true)
                 
                 NavigationLink(
-                    destination: Home(
+                    destination: viewMyHealth(
                         
                     ),
                     label: {
                         Text("Am I at Risk?")
                     }).buttonStyle(.borderedProminent)
-                    .navigationTitle("Home")
+                    .navigationTitle("viewMyHealth")
                     .navigationBarTitleDisplayMode(.inline)
                     .navigationBarHidden(true)
                 
@@ -58,8 +58,8 @@ struct Home: View {
         }
     }
 
-struct Home_Previews: PreviewProvider {
+struct viewMyHealth_Previews: PreviewProvider {
     static var previews: some View {
-        Home()
+        viewMyHealth()
     }
 }

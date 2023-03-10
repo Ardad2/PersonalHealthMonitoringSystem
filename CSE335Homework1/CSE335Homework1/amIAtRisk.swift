@@ -1,52 +1,52 @@
 //
-//  Home.swift
-//  CSE335Homework1
+//  amIAtRisk.swift
+//  CSE335amIAtRiskwork1
 //
 //  Created by Arjun Dadhwal on 3/8/23.
 //
 
 import SwiftUI
 
-struct Home: View {
+struct amIAtRisk: View {
     
     
 
     var body: some View {
         NavigationView{
             VStack(spacing:100) {
-                Text("Personal Health Monitoring System")
+                Text("Am I at Risk?")
                 
                 
                 NavigationLink(
-                    destination: Home(
+                    destination: amIAtRisk(
                         
                     ),
                     label: {
                         Text("Enter Data")
                     }).buttonStyle(.borderedProminent)
-                    .navigationTitle("Home")
+                    .navigationTitle("amIAtRisk")
                     .navigationBarTitleDisplayMode(.inline)
                     .navigationBarHidden(true)
                 
                 NavigationLink(
-                    destination: Home(
+                    destination: amIAtRisk(
                         
                     ),
                     label: {
                         Text("View My Health")
                     }).buttonStyle(.borderedProminent)
-                    .navigationTitle("Home")
+                    .navigationTitle("amIAtRisk")
                     .navigationBarTitleDisplayMode(.inline)
                     .navigationBarHidden(true)
                 
                 NavigationLink(
-                    destination: Home(
+                    destination: amIAtRisk(
                         
                     ),
                     label: {
                         Text("Am I at Risk?")
                     }).buttonStyle(.borderedProminent)
-                    .navigationTitle("Home")
+                    .navigationTitle("amIAtRisk")
                     .navigationBarTitleDisplayMode(.inline)
                     .navigationBarHidden(true)
                 
@@ -58,8 +58,8 @@ struct Home: View {
         }
     }
 
-struct Home_Previews: PreviewProvider {
+struct amIAtRisk_Previews: PreviewProvider {
     static var previews: some View {
-        Home()
+        amIAtRisk()
     }
 }
