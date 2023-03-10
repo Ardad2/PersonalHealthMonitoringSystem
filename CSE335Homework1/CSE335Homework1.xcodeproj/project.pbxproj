@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		82EC5E1329B9849F00B96D33 /* CSE335Homework1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EC5E1229B9849F00B96D33 /* CSE335Homework1App.swift */; };
-		82EC5E1529B9849F00B96D33 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EC5E1429B9849F00B96D33 /* ContentView.swift */; };
+		82EC5E1529B9849F00B96D33 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EC5E1429B9849F00B96D33 /* Home.swift */; };
 		82EC5E1729B984A000B96D33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82EC5E1629B984A000B96D33 /* Assets.xcassets */; };
 		82EC5E1A29B984A000B96D33 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82EC5E1929B984A000B96D33 /* Preview Assets.xcassets */; };
 		82EC5E2429B984A000B96D33 /* CSE335Homework1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EC5E2329B984A000B96D33 /* CSE335Homework1Tests.swift */; };
@@ -38,7 +38,7 @@
 /* Begin PBXFileReference section */
 		82EC5E0F29B9849F00B96D33 /* CSE335Homework1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSE335Homework1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82EC5E1229B9849F00B96D33 /* CSE335Homework1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSE335Homework1App.swift; sourceTree = "<group>"; };
-		82EC5E1429B9849F00B96D33 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		82EC5E1429B9849F00B96D33 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		82EC5E1629B984A000B96D33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82EC5E1929B984A000B96D33 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		82EC5E1F29B984A000B96D33 /* CSE335Homework1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSE335Homework1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,7 +101,7 @@
 				82EC5E3E29BA7F2D00B96D33 /* dayDictionary.swift */,
 				82EC5E3C29B9859D00B96D33 /* dayRecord.swift */,
 				82EC5E1229B9849F00B96D33 /* CSE335Homework1App.swift */,
-				82EC5E1429B9849F00B96D33 /* ContentView.swift */,
+				82EC5E1429B9849F00B96D33 /* Home.swift */,
 				82EC5E1629B984A000B96D33 /* Assets.xcassets */,
 				82EC5E1829B984A000B96D33 /* Preview Content */,
 			);
@@ -264,7 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				82EC5E3D29B9859D00B96D33 /* dayRecord.swift in Sources */,
-				82EC5E1529B9849F00B96D33 /* ContentView.swift in Sources */,
+				82EC5E1529B9849F00B96D33 /* Home.swift in Sources */,
 				82EC5E3F29BA7F2D00B96D33 /* dayDictionary.swift in Sources */,
 				82EC5E1329B9849F00B96D33 /* CSE335Homework1App.swift in Sources */,
 			);

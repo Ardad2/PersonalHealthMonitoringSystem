@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  Home.swift
 //  CSE335Homework1
 //
 //  Created by Arjun Dadhwal on 3/8/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct Home: View {
     
     
 
@@ -18,35 +18,35 @@ struct ContentView: View {
                 
                 
                 NavigationLink(
-                    destination: ContentView(
+                    destination: Home(
                         
                     ),
                     label: {
                         Text("Enter Data")
                     }).buttonStyle(.borderedProminent)
-                    .navigationTitle("ContentView")
+                    .navigationTitle("Home")
                     .navigationBarTitleDisplayMode(.inline)
                     .navigationBarHidden(true)
                 
                 NavigationLink(
-                    destination: ContentView(
+                    destination: Home(
                         
                     ),
                     label: {
                         Text("View My Health")
                     }).buttonStyle(.borderedProminent)
-                    .navigationTitle("ContentView")
+                    .navigationTitle("Home")
                     .navigationBarTitleDisplayMode(.inline)
                     .navigationBarHidden(true)
                 
                 NavigationLink(
-                    destination: ContentView(
+                    destination: Home(
                         
                     ),
                     label: {
                         Text("Am I at Risk?")
                     }).buttonStyle(.borderedProminent)
-                    .navigationTitle("ContentView")
+                    .navigationTitle("Home")
                     .navigationBarTitleDisplayMode(.inline)
                     .navigationBarHidden(true)
                 
@@ -58,8 +58,8 @@ struct ContentView: View {
         }
     }
 
-struct ContentView_Previews: PreviewProvider {
+struct Home_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Home()
     }
 }
