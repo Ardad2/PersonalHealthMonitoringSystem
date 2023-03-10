@@ -10,6 +10,7 @@ import Foundation
 class dayDictionary: ObservableObject
 {
     @Published var list:[dayRecord] = [dayRecord]();
+    let calendar = Calendar.current
     
     init() {
         
@@ -21,7 +22,7 @@ class dayDictionary: ObservableObject
     {
         if (list.count >= 1)
         {
-            if (isDateInToday(list[0].get_date()))
+            if (calendar.isDateInToday(list[0].get_date()))
             {
                 list[0].change_record(newBPSystolic:bloodPressureSystolic, newBPDiastolic:bloodPressureDiastolic, newWeight: weight, newSugar:sugarLevel, newSymptoms:symptoms)
 

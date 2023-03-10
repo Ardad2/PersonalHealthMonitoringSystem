@@ -7,32 +7,28 @@
 
 import SwiftUI
 
-extension Date {
-    var dayAfter: Date {
-        return Calendar.current.date(byAdding: .day, value: 1, to: self)!
-    }
-
-    var dayBefore: Date {
-        return Calendar.current.date(byAdding: .day, value: -1, to: self)!
-    }
-}
-
-
 struct ContentView: View {
     
     
 
     var body: some View {
-        
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text(Date.now, format: .dateTime.day().month().year())
-            Text(Date, format: .dateTime.day().month().year())
-
+        NavigationView{
+            VStack {
+                HStack{
+                    Text("Personal Health Monitoring System").foregroundColor(.blue);
+                }
+                HStack{
+                    Text("Enter Data").foregroundColor(.blue);
+                }
+                HStack{
+                    Text("View My Health").foregroundColor(.blue);
+                }
+                HStack{
+                    Text("Am I at Risk?").foregroundColor(.blue);
+                }
+                
+            }
         }
-        .padding()
     }
 }
 
