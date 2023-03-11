@@ -11,7 +11,7 @@ struct viewMyHealth: View {
     
     @StateObject var dayData:dayDictionary = dayDictionary();
     
-    @State var test = [dayRecord(date:"03/10/2023", bloodPressureSystolic:110.59, bloodPressureDiastolic:80.73, weight:165.0, sugarLevel:100.35, symptoms:"Hunger"), dayRecord(date:"03/09/2023", bloodPressureSystolic:110.59, bloodPressureDiastolic:80.73, weight:165.0, sugarLevel:100.35, symptoms:"Hunger"),dayRecord(date:"03/08/2023", bloodPressureSystolic:110.59, bloodPressureDiastolic:80.73, weight:165.0, sugarLevel:100.35, symptoms:"Hunger")]
+  //  @State var test = [dayRecord(date:"03/10/2023", bloodPressureSystolic:110.59, bloodPressureDiastolic:80.73, weight:165.0, sugarLevel:100.35, symptoms:"Hunger"), dayRecord(date:"03/09/2023", bloodPressureSystolic:110.59, bloodPressureDiastolic:80.73, weight:165.0, sugarLevel:100.35, symptoms:"Hunger"),dayRecord(date:"03/08/2023", bloodPressureSystolic:110.59, bloodPressureDiastolic:80.73, weight:165.0, sugarLevel:100.35, symptoms:"Hunger")]
     
     //[dayRecord("03/10/2023", 120, 180, 165, 100, "Exhaustion" )];
     

@@ -10,14 +10,14 @@ import Foundation
 class dayRecord: Identifiable
 {
     let id = UUID()
-    var date:String? = nil;
+    var date:Date? = nil;
     var bloodPressureSystolic:Double? = nil;
     var bloodPressureDiastolic:Double? = nil;
     var weight:Double? = nil;
     var sugarLevel:Double? = nil;
     var symptoms:String? = nil;
     
-    init (date:String, bloodPressureSystolic:Double, bloodPressureDiastolic:Double, weight:Double, sugarLevel:Double, symptoms:String)
+    init (date:Date, bloodPressureSystolic:Double, bloodPressureDiastolic:Double, weight:Double, sugarLevel:Double, symptoms:String)
     {
         self.date = date;
         self.bloodPressureSystolic = bloodPressureSystolic;
@@ -36,12 +36,18 @@ class dayRecord: Identifiable
         self.symptoms = newSymptoms;
     }
     
-    func get_date() -> String {
+    func get_date() -> Date {
         return self.date!;
     }
     
     func get_date_string() -> String {
-        return self.date!;
+        let ownDate = self.date;
+        let formatter1 = DateFormatter()
+        formatter1.dateStyle = .short;
+        
+        var result = formatter1.string(from: ownDate!);
+        
+        return result;
     }
     
     

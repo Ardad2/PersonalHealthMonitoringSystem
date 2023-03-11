@@ -39,7 +39,7 @@ class dayDictionary: ObservableObject
                 }
                 else
                 {
-                    list.insert(dayRecord(date:todayString, bloodPressureSystolic:bloodPressureSystolic, bloodPressureDiastolic:bloodPressureDiastolic, weight:weight, sugarLevel:sugarLevel, symptoms:symptoms), at: 0)
+                    list.insert(dayRecord(date:givenDate, bloodPressureSystolic:bloodPressureSystolic, bloodPressureDiastolic:bloodPressureDiastolic, weight:weight, sugarLevel:sugarLevel, symptoms:symptoms), at: 0)
                     
                     if (list.count > 7)
                     {
@@ -52,7 +52,7 @@ class dayDictionary: ObservableObject
             
             
             else {
-                list.append(dayRecord(date:todayString, bloodPressureSystolic:bloodPressureSystolic, bloodPressureDiastolic:bloodPressureDiastolic, weight:weight, sugarLevel:sugarLevel, symptoms:symptoms))
+                list.append(dayRecord(date:givenDate, bloodPressureSystolic:bloodPressureSystolic, bloodPressureDiastolic:bloodPressureDiastolic, weight:weight, sugarLevel:sugarLevel, symptoms:symptoms))
             }
 
         
@@ -67,7 +67,7 @@ class dayDictionary: ObservableObject
                 
         var givenDateString =  formatter1.string(from: givenDate);
 
-                list.append(dayRecord(date:givenDateString, bloodPressureSystolic:bloodPressureSystolic, bloodPressureDiastolic:bloodPressureDiastolic, weight:weight, sugarLevel:sugarLevel, symptoms:symptoms))
+                list.append(dayRecord(date:givenDate, bloodPressureSystolic:bloodPressureSystolic, bloodPressureDiastolic:bloodPressureDiastolic, weight:weight, sugarLevel:sugarLevel, symptoms:symptoms))
  
         }
         
@@ -92,10 +92,29 @@ class dayDictionary: ObservableObject
             return false;
         }
         
-    var lastFourDaysWeightSum: Double = 0.0;
+        var currentDate = list[0].get_date()
         
-        for index in 0..<4
+        
+        var lastFourDaysWeightSum: Double = list[0].get_weight();
+        
+        for index in 1..<4
         {
+            currentDate = Calendar.current.date(byAdding: .hour, value: -24, to: currentDate)!
+            
+            var formatter1 = DateFormatter()
+            formatter1.dateStyle = .short;
+            
+            var currentdateString = formatter1.string(from: currentDate);
+            
+            var traversedString = formatter1.string(from: list[index].get_date())
+            
+            if (currentdateString != traversedString)
+            {
+                return false;
+            }
+            
+            
+            
             lastFourDaysWeightSum += list[index].get_weight()
         }
         
@@ -105,6 +124,21 @@ class dayDictionary: ObservableObject
         
         for index in 4..<7
         {
+            currentDate = Calendar.current.date(byAdding: .hour, value: -24, to: currentDate)!
+            
+            var formatter1 = DateFormatter()
+            formatter1.dateStyle = .short;
+            
+            var currentdateString = formatter1.string(from: currentDate);
+            
+            var traversedString = formatter1.string(from: list[index].get_date())
+            
+            if (currentdateString != traversedString)
+            {
+                return false;
+            }
+            
+
             earlyWeightSum += list[index].get_weight();
         }
         
@@ -129,6 +163,25 @@ class dayDictionary: ObservableObject
             return false;
         }
         
+        var currentDate = list[0].get_date()
+
+        
+        currentDate = Calendar.current.date(byAdding: .hour, value: -24, to: currentDate)!
+        
+        var formatter1 = DateFormatter()
+        formatter1.dateStyle = .short;
+        
+        var currentdateString = formatter1.string(from: currentDate);
+        
+        var traversedString = formatter1.string(from: list[1].get_date())
+        
+        if (currentdateString != traversedString)
+        {
+            return false;
+        }
+        
+        
+        
         var dangerSugar:Double = (list[1].get_sugarLevel()) * (1.10);
         
         var todaySugar:Double = list[0].get_sugarLevel();
@@ -152,6 +205,23 @@ class dayDictionary: ObservableObject
     func bpHigh() -> Bool {
         
         if (list.count < 2)
+        {
+            return false;
+        }
+        
+        var currentDate = list[0].get_date()
+
+        
+        currentDate = Calendar.current.date(byAdding: .hour, value: -24, to: currentDate)!
+        
+        var formatter1 = DateFormatter()
+        formatter1.dateStyle = .short;
+        
+        var currentdateString = formatter1.string(from: currentDate);
+        
+        var traversedString = formatter1.string(from: list[1].get_date())
+        
+        if (currentdateString != traversedString)
         {
             return false;
         }
