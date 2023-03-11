@@ -9,12 +9,16 @@ import SwiftUI
 
 struct Home: View {
     
+
+    
+    @StateObject var dayData:dayDictionary = dayDictionary();
+
     
 
     var body: some View {
         NavigationView{
             VStack(spacing:100) {
-                Text("Personal Health Monitoring System")
+
                 
                 
                 NavigationLink(

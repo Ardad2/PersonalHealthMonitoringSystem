@@ -41,6 +41,15 @@ struct enterData: View {
                     TextField("Describe any symptoms you have", text: $enterSymptoms)
                     
                 }
+                Button(action: {
+                }) {
+                    Text("Submit")
+                }
+                
+                Button(action: {
+                }) {
+                    Text("Retrun")
+                }
                 
                 Spacer()
                 Spacer()

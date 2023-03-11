@@ -20,9 +20,15 @@ class dayDictionary: ObservableObject
     
     func add_day(_ givenDate:Date, _ bloodPressureSystolic:Double, _ bloodPressureDiastolic:Double, _ weight:Double,  _ sugarLevel:Double, _ symptoms:String)
     {
+        let today = Date.now;
+        let formatter1 = DateFormatter()
+        formatter1.dateStyle = .short;
+        
+        var todayString = formatter1.string(from: today);
+        
         if (list.count >= 1)
         {
-            if (calendar.isDateInToday(list[0].get_date()))
+            if (todayString == list[0].get_date())
             {
                 list[0].change_record(newBPSystolic:bloodPressureSystolic, newBPDiastolic:bloodPressureDiastolic, newWeight: weight, newSugar:sugarLevel, newSymptoms:symptoms)
 
@@ -31,7 +37,7 @@ class dayDictionary: ObservableObject
             }
             else
             {
-                list.insert(dayRecord(bloodPressureSystolic:bloodPressureSystolic, bloodPressureDiastolic:bloodPressureDiastolic, weight:weight, sugarLevel:sugarLevel, symptoms:symptoms), at: 0)
+                list.insert(dayRecord(date:todayString, bloodPressureSystolic:bloodPressureSystolic, bloodPressureDiastolic:bloodPressureDiastolic, weight:weight, sugarLevel:sugarLevel, symptoms:symptoms), at: 0)
                 
                 if (list.count > 7)
                 {
@@ -44,7 +50,7 @@ class dayDictionary: ObservableObject
         
         
         else {
-            list.append(dayRecord(bloodPressureSystolic:bloodPressureSystolic, bloodPressureDiastolic:bloodPressureDiastolic, weight:weight, sugarLevel:sugarLevel, symptoms:symptoms))
+            list.append(dayRecord(date:todayString, bloodPressureSystolic:bloodPressureSystolic, bloodPressureDiastolic:bloodPressureDiastolic, weight:weight, sugarLevel:sugarLevel, symptoms:symptoms))
         }
     }
     

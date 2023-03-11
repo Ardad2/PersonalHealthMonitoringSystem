@@ -7,20 +7,21 @@
 
 import Foundation
 
-class dayRecord
+class dayRecord: Identifiable
 {
-    var date:Date? = nil;
+    let id = UUID()
+    var date:String? = nil;
     var bloodPressureSystolic:Double? = nil;
     var bloodPressureDiastolic:Double? = nil;
     var weight:Double? = nil;
     var sugarLevel:Double? = nil;
     var symptoms:String? = nil;
     
-    init (bloodPressureSystolic:Double, bloodPressureDiastolic:Double, weight:Double, sugarLevel:Double, symptoms:String)
+    init (date:String, bloodPressureSystolic:Double, bloodPressureDiastolic:Double, weight:Double, sugarLevel:Double, symptoms:String)
     {
-        self.date = Date.now;
+        self.date = date;
         self.bloodPressureSystolic = bloodPressureSystolic;
-        self.bloodPressureDiastolic = bloodPressureSystolic;
+        self.bloodPressureDiastolic = bloodPressureDiastolic;
         self.weight = weight;
         self.sugarLevel = sugarLevel;
         self.symptoms = symptoms;
@@ -35,7 +36,7 @@ class dayRecord
         self.symptoms = newSymptoms;
     }
     
-    func get_date() -> Date {
+    func get_date() -> String {
         return self.date!;
     }
     
