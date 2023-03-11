@@ -15,7 +15,8 @@ struct enterData: View {
     @State var enterSugarLevel:String = "";
     @State var enterSymptoms:String = "";
     
-    
+    @StateObject var dayData:dayDictionary = dayDictionary();
+
 
     var body: some View {
         NavigationView{
@@ -42,13 +43,16 @@ struct enterData: View {
                     
                 }
                 Button(action: {
+                    dayData.add_day(Date.now, (enterBPSys as NSString).doubleValue, (enterBPDia as NSString).doubleValue, (enterWeight as NSString).doubleValue, (enterSugarLevel as NSString).doubleValue, "hunger");
+
                 }) {
+                    
                     Text("Submit")
                 }
                 
                 Button(action: {
                 }) {
-                    Text("Retrun")
+                    Text("Return")
                 }
                 
                 Spacer()

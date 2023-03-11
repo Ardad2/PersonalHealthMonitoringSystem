@@ -19,11 +19,15 @@ struct Home: View {
         NavigationView{
             VStack(spacing:100) {
 
-                
+                Button(action: {
+                    dayData.add_day(Date.now, 110.59, 80.73, 165.0, 100, "hunger");
+                }) {
+                    Text("Add Day")
+                }
                 
                 NavigationLink(
                     destination: enterData(
-                        
+                        dayData:self.dayData
                     ),
                     label: {
                         Text("Enter Data")
@@ -34,7 +38,7 @@ struct Home: View {
                 
                 NavigationLink(
                     destination: viewMyHealth(
-                        
+                        dayData:self.dayData
                     ),
                     label: {
                         Text("View My Health")
@@ -45,7 +49,7 @@ struct Home: View {
                 
                 NavigationLink(
                     destination: amIAtRisk(
-                        
+                        dayData:self.dayData
                     ),
                     label: {
                         Text("Am I at Risk?")
