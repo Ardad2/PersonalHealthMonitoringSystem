@@ -29,7 +29,7 @@ struct viewMyHealth: View {
                             datum in VStack()
                             {
                                 HStack {
-                                    Text(datum.get_date());
+                                    Text(datum.get_date_string());
                                     Text(String(datum.get_bloodPressureSystolic()));
                                          Text(String(datum.get_bloodPressureDiastolic()));
                                     Text(String(datum.get_sugarLevel()));

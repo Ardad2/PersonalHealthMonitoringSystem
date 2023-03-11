@@ -15,7 +15,7 @@ struct enterData: View {
     @State var enterSugarLevel:String = "";
     @State var enterSymptoms:String = "";
     
-    @State var errorMessage:String = "";
+    @State var statusMessage:String = "";
     
     @StateObject var dayData:dayDictionary = dayDictionary();
 
@@ -25,9 +25,9 @@ struct enterData: View {
             VStack(spacing:100) {
                 Text("Enter Data")
                 
-                if (errorMessage != "")
+                if (statusMessage != "")
                 {
-                    Text("\(errorMessage)")
+                    Text("\(statusMessage)")
                 }
                 
                 HStack() {
@@ -52,15 +52,21 @@ struct enterData: View {
                 Button(action: {
                     if ( ( ((enterBPSys as NSString).doubleValue) < 0  ) || ( ((enterBPDia as NSString).doubleValue) < 0 ) || ( ((enterWeight as NSString).doubleValue) < 0) || ( ((enterSugarLevel as NSString).doubleValue) < 0))
                     {
-                        errorMessage = "BP, Weight, and Sugar Level have to be positive!"
+                        statusMessage = "BP, Weight, and Sugar Level have to be positive!"
                     }
                     else if (enterBPSys.isEmpty || enterBPDia.isEmpty || enterWeight.isEmpty || enterSugarLevel.isEmpty )
                     {
-                        errorMessage = "You have to fill all fields, except for symptoms!"
+                        statusMessage = "You have to fill all fields, except for symptoms!"
                     }
                     else {
                         dayData.add_day(Date.now, (enterBPSys as NSString).doubleValue, (enterBPDia as NSString).doubleValue, (enterWeight as NSString).doubleValue, (enterSugarLevel as NSString).doubleValue, "hunger");
-                    }
+                        let today = Date.now;
+                        let formatter1 = DateFormatter()
+                        formatter1.dateStyle = .short;
+                        
+                        var todayString = formatter1.string(from: today);
+                        
+                        statusMessage = "Added data entry for today ( \(todayString) )" ;           }
 
                 }) {
                     

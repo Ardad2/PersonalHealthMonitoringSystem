@@ -40,6 +40,11 @@ class dayRecord: Identifiable
         return self.date!;
     }
     
+    func get_date_string() -> String {
+        return self.date!;
+    }
+    
+    
     func get_bloodPressureSystolic() -> Double
     {
         return self.bloodPressureSystolic!;
