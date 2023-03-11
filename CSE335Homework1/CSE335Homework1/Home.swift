@@ -22,13 +22,26 @@ struct Home: View {
                 Button(action: {
                     let today = Date()
                     print(today)
-                    let modifiedDate = Calendar.current.date(byAdding: .hour, value: -48, to: today)!
-                    print(modifiedDate)
+
+
+
+
+                    dayData.add_day_test(Calendar.current.date(byAdding: .hour, value: -168, to: today)!, 110.59, 80.73, 165.0, 100, "hunger");
+                    dayData.add_day_test(Calendar.current.date(byAdding: .hour, value: -144, to: today)!, 110.59, 80.73, 165.0, 100, "hunger");
+                    dayData.add_day_test(Calendar.current.date(byAdding: .hour, value: -120, to: today)!, 110.59, 80.73, 165.0, 100, "hunger");
+                    dayData.add_day_test(Calendar.current.date(byAdding: .hour, value: -96, to: today)!, 110.59, 80.73, 165.0, 100, "hunger");
+                    dayData.add_day_test(Calendar.current.date(byAdding: .hour, value: -72, to: today)!, 110.59, 80.73, 165.0, 100, "hunger");
+                    dayData.add_day_test(Calendar.current.date(byAdding: .hour, value: -48, to: today)!, 110.59, 80.73, 166.0, 100, "hunger");
+                    dayData.add_day_test(Calendar.current.date(byAdding: .hour, value: -24, to: today)!, 110.59, 80.73, 166.0, 100, "hunger");
+
+    
                     
-                    dayData.add_day(modifiedDate, 110.59, 80.73, 165.0, 100, "hunger");
+                    
                 }) {
-                    Text("Add Day")
+                    Text("Test Function")
                 }
+                
+                Text("Personal Health Monitoring System").foregroundColor(Color.blue);
                 
                 NavigationLink(
                     destination: enterData(

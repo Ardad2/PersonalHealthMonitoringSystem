@@ -21,27 +21,6 @@ struct viewMyHealth: View {
             VStack(spacing:100) {
                 Text("View My Health")
                 
-                /*
-                List {
-                    Section(header: ListHeader()) {
-                        ForEach(test) {
-                            datum in NavigationLink(destination: Home() )
-                            {
-                                HStack {
-                                    Text(datum.get_date());
-                                    Text(String(datum.get_bloodPressureSystolic()) + "(sys)");
-                                         Text(String(datum.get_bloodPressureDiastolic()) + "(dia)");
-                                         Text(String(datum.get_weight()));
-                                    Spacer();
-                                }
-                            }
-                            
-                        }
-                    }
-                }
-                
-                */
-                
                 List {
                     Section(header: ListHeader())
                     {
@@ -53,6 +32,7 @@ struct viewMyHealth: View {
                                     Text(datum.get_date());
                                     Text(String(datum.get_bloodPressureSystolic()));
                                          Text(String(datum.get_bloodPressureDiastolic()));
+                                    Text(String(datum.get_sugarLevel()));
                                          Text(String(datum.get_weight()));
                                     Spacer();
                                 }
@@ -60,24 +40,6 @@ struct viewMyHealth: View {
                         }
                     }
                 }
-                
-                Button(action: {
-                    dayData.add_day(Date.now, 110.59, 80.73, 165.0, 100, "hunger");
-                }) {
-                    Text("Add Day")
-                }
-                
-                
-                
-                /*
-                
-                Table(test){
-                    TableColumn("Date") { day in
-                        Text(day.get_date())}
-                    TableColumn("Symptoms") { day in
-                        Text(day.get_symptoms())}
-                }
-                */
             
                 
                 
@@ -91,7 +53,7 @@ struct viewMyHealth: View {
 struct ListHeader: View {
     var body: some View {
         HStack {
-            Text("Date   Blood    Pressure   Weight ")
+            Text("Date   BP(SYS)    BP(DIA)  Sugar  Weight ")
         }
     }
 }
