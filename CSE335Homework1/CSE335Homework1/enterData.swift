@@ -50,11 +50,16 @@ struct enterData: View {
                     Text("Submit")
                 }
                 
-                Button(action: {
-                }) {
-                    Text("Return")
-                }
-                
+                NavigationLink(
+                    destination: Home(
+                        dayData:self.dayData
+                    ),
+                    label: {
+                        Text("Go back")
+                    }).buttonStyle(.borderedProminent)
+                    .navigationTitle("Home")
+                    .navigationBarTitleDisplayMode(.inline)
+                    .navigationBarHidden(true)
                 Spacer()
                 Spacer()
             }

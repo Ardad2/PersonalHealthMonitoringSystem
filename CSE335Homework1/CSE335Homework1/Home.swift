@@ -20,7 +20,12 @@ struct Home: View {
             VStack(spacing:100) {
 
                 Button(action: {
-                    dayData.add_day(Date.now, 110.59, 80.73, 165.0, 100, "hunger");
+                    let today = Date()
+                    print(today)
+                    let modifiedDate = Calendar.current.date(byAdding: .hour, value: -48, to: today)!
+                    print(modifiedDate)
+                    
+                    dayData.add_day(modifiedDate, 110.59, 80.73, 165.0, 100, "hunger");
                 }) {
                     Text("Add Day")
                 }

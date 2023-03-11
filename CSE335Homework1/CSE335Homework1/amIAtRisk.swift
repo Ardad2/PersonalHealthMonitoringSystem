@@ -23,21 +23,16 @@ struct amIAtRisk: View {
                 {
                     Text("You are gaining weight")
                 }
-                else if (dayData.sugarHigh())
+                if (dayData.sugarHigh())
                 {
                     Text("Your sugar level is high")
                 }
-                else if (dayData.bpHigh())
+                if (dayData.bpHigh())
                 {
                     Text("Your blood pressure is high")
                 }
-                else {
+                else if (!dayData.gainedWeight() && !dayData.sugarHigh() && !dayData.bpHigh()) {
                     Text("You are in good health, keep up the good work");
-                }
-                
-                Button(action: {
-                }) {
-                    Text("Return")
                 }
                 
                 Spacer()
