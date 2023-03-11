@@ -21,18 +21,20 @@ struct amIAtRisk: View {
                 
                 if (dayData.gainedWeight())
                 {
-                    Text("You are gaining weight")
+                    Text("You are gaining weight").foregroundColor(Color.red);
                 }
                 if (dayData.sugarHigh())
                 {
-                    Text("Your sugar level is high")
+                    Text("Your sugar level is high").foregroundColor(Color.red);
                 }
                 if (dayData.bpHigh())
                 {
-                    Text("Your blood pressure is high")
+                    Text("Your blood pressure is high").foregroundColor(Color.red);
                 }
                 else if (!dayData.gainedWeight() && !dayData.sugarHigh() && !dayData.bpHigh()) {
                     Text("You are in good health, keep up the good work");
+                    Image("smiley").resizable().aspectRatio(contentMode: .fit).frame(height: 150)
+
                 }
                 
                 Spacer()

@@ -18,27 +18,30 @@ struct Home: View {
     var body: some View {
         NavigationView{
             VStack(spacing:100) {
+                
+                //This button can be used for testing outputs.
+                //Do note that for swift multiplication, 100 * 0.1 = 110.00000000000001
 
                 Button(action: {
                     let today = Date()
                     print(today)
 
+                    //Add the days in reverse order
 
-
-
-                    dayData.add_day_test(Calendar.current.date(byAdding: .hour, value: -168, to: today)!, 110.59, 80.73, 165.0, 100, "hunger");
-                    dayData.add_day_test(Calendar.current.date(byAdding: .hour, value: -144, to: today)!, 110.59, 80.73, 165.0, 100, "hunger");
-                    dayData.add_day_test(Calendar.current.date(byAdding: .hour, value: -120, to: today)!, 110.59, 80.73, 165.0, 100, "hunger");
-                    dayData.add_day_test(Calendar.current.date(byAdding: .hour, value: -96, to: today)!, 110.59, 80.73, 165.0, 100, "hunger");
+                    dayData.add_day_test(Calendar.current.date(byAdding: .hour, value: -24, to: today)!, 110.59, 80.73, 166.0, 110.0, "hunger");
+                    dayData.add_day_test(Calendar.current.date(byAdding: .hour, value: -48, to: today)!, 110.59, 80.73, 166.0, 100.0, "hunger");
                     dayData.add_day_test(Calendar.current.date(byAdding: .hour, value: -72, to: today)!, 110.59, 80.73, 165.0, 100, "hunger");
-                    dayData.add_day_test(Calendar.current.date(byAdding: .hour, value: -48, to: today)!, 110.59, 80.73, 166.0, 100, "hunger");
-                    dayData.add_day_test(Calendar.current.date(byAdding: .hour, value: -24, to: today)!, 110.59, 80.73, 166.0, 100, "hunger");
+                    dayData.add_day_test(Calendar.current.date(byAdding: .hour, value: -96, to: today)!, 110.59, 80.73, 165.0, 100, "hunger");
+                    dayData.add_day_test(Calendar.current.date(byAdding: .hour, value: -120, to: today)!, 110.59, 80.73, 165.0, 100, "hunger");
+                    dayData.add_day_test(Calendar.current.date(byAdding: .hour, value: -144, to: today)!, 110.59, 80.73, 165.0, 100, "hunger");
+                    dayData.add_day_test(Calendar.current.date(byAdding: .hour, value: -168, to: today)!, 110.59, 80.73, 166.0, 100, "hunger");
+
 
     
                     
                     
                 }) {
-                    Text("Test Function")
+                    Text("Test Input")
                 }
                 
                 Text("Personal Health Monitoring System").foregroundColor(Color.blue);

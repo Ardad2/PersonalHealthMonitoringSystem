@@ -52,7 +52,7 @@ struct enterData: View {
                 Button(action: {
                     if ( ( ((enterBPSys as NSString).doubleValue) < 0  ) || ( ((enterBPDia as NSString).doubleValue) < 0 ) || ( ((enterWeight as NSString).doubleValue) < 0) || ( ((enterSugarLevel as NSString).doubleValue) < 0))
                     {
-                        errorMessage = "Blood Pressure, Weight, and Sugar Levels have to be positive numbers!"
+                        errorMessage = "BP, Weight, and Sugar Level have to be positive!"
                     }
                     else if (enterBPSys.isEmpty || enterBPDia.isEmpty || enterWeight.isEmpty || enterSugarLevel.isEmpty )
                     {
