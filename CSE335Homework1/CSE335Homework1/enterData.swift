@@ -18,6 +18,10 @@ struct enterData: View {
     @State var statusMessage:String = "";
     
     @StateObject var dayData:dayDictionary = dayDictionary();
+    
+    func checkNumeric(givenString: String) -> Bool {
+       return Double(givenString) != nil
+    }
 
 
     var body: some View {
@@ -57,6 +61,10 @@ struct enterData: View {
                     else if (enterBPSys.isEmpty || enterBPDia.isEmpty || enterWeight.isEmpty || enterSugarLevel.isEmpty )
                     {
                         statusMessage = "You have to fill all fields, except for symptoms!"
+                    }
+                    else if (checkNumeric(givenString: enterBPSys) == false || checkNumeric(givenString: enterBPDia) == false || checkNumeric(givenString: enterWeight) == false || checkNumeric(givenString: enterSugarLevel) == false )
+                    {
+                        statusMessage="BP, Weight, and Sugar Level have to be numeric!"
                     }
                     else {
                         dayData.add_day(Date.now, (enterBPSys as NSString).doubleValue, (enterBPDia as NSString).doubleValue, (enterWeight as NSString).doubleValue, (enterSugarLevel as NSString).doubleValue, "hunger");
