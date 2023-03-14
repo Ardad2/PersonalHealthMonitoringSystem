@@ -23,6 +23,7 @@ struct amIAtRisk: View {
                 {
                     Text("You are gaining weight").foregroundColor(Color.red);
                 }
+                
                 if (dayData.sugarHigh())
                 {
                     Text("Your sugar level is high").foregroundColor(Color.red);
